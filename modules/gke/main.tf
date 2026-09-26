@@ -202,6 +202,7 @@ resource "google_service_account" "kubernetes_service_account" {
 
 resource "google_container_node_pool" "general" {
   name               = "general"
+  project            = var.k8s_project
   cluster            = google_container_cluster.cluster.id
   initial_node_count = var.k8s_tier_node_count
   version            = var.k8s_cluster_node_pool_version
@@ -212,7 +213,7 @@ resource "google_container_node_pool" "general" {
 
   autoscaling {
     min_node_count = var.k8s_tier_node_count
-    max_node_count = 100
+    max_node_count = 1
   }
 
   node_config {
@@ -230,41 +231,41 @@ resource "google_container_node_pool" "general" {
   }
 }
 
-resource "google_container_node_pool" "spot" {
-  name               = "spot"
-  cluster            = google_container_cluster.cluster.id
-  initial_node_count = var.k8s_spot_tier_node_count
-  project            = var.k8s_project
-  location           = var.k8s_cluster_location
-  version            = var.k8s_cluster_node_pool_version
+# resource "google_container_node_pool" "spot" {
+#   name               = "spot"
+#   cluster            = google_container_cluster.cluster.id
+#   initial_node_count = var.k8s_spot_tier_node_count
+#   project            = var.k8s_project
+#   location           = var.k8s_cluster_location
+#   version            = var.k8s_cluster_node_pool_version
 
-  management {
-    auto_repair  = true
-    auto_upgrade = true
-  }
+#   management {
+#     auto_repair  = true
+#     auto_upgrade = true
+#   }
 
-  autoscaling {
-    min_node_count = var.k8s_spot_tier_node_count
-    max_node_count = 100
-  }
+#   autoscaling {
+#     min_node_count = var.k8s_spot_tier_node_count
+#     max_node_count = 100
+#   }
 
-  node_config {
-    preemptible  = true
-    machine_type = var.k8s_spot_tier
+#   node_config {
+#     preemptible  = true
+#     machine_type = var.k8s_spot_tier
 
-    labels = {
-      team = "spot"
-    }
+#     labels = {
+#       team = "spot"
+#     }
 
-    #    taint {
-    #      key    = "instance_type"
-    #      value  = "spot"
-    #      effect = "NO_SCHEDULE"
-    #    }
+#     #    taint {
+#     #      key    = "instance_type"
+#     #      value  = "spot"
+#     #      effect = "NO_SCHEDULE"
+#     #    }
 
-    service_account = google_service_account.kubernetes_service_account.email
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/cloud-platform"
-    ]
-  }
-}
+#     service_account = google_service_account.kubernetes_service_account.email
+#     oauth_scopes = [
+#       "https://www.googleapis.com/auth/cloud-platform"
+#     ]
+#   }
+# }

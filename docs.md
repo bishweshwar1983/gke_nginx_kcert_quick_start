@@ -28,7 +28,7 @@ No resources.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_environment_cluster_name"></a> [environment\_cluster\_name](#input\_environment\_cluster\_name) | The Association of Cluster Name and Environments | `map(string)` | <pre>{<br>  "devops": "devops-k8s-cluster"<br>}</pre> | no |
-| <a name="input_environment_k8s_version"></a> [environment\_k8s\_version](#input\_environment\_k8s\_version) | The Association of k8s version and Environments | `map(string)` | <pre>{<br>  "devops": "1.27.4-gke.900"<br>}</pre> | no |
+| <a name="input_environment_k8s_version"></a> [environment\_k8s\_version](#input\_environment\_k8s\_version) | The Association of k8s version and Environments | `map(string)` | <pre>{<br>  "devops": "1.36.2-gke.2064000"<br>}</pre> | no |
 | <a name="input_environment_letsencrypt_email"></a> [environment\_letsencrypt\_email](#input\_environment\_letsencrypt\_email) | The Association of Letsencrypt Email and Environments | `map(string)` | <pre>{<br>  "devops": "webtechguru@gmail.com"<br>}</pre> | no |
 | <a name="input_environment_master_ipv4_cidr_block"></a> [environment\_master\_ipv4\_cidr\_block](#input\_environment\_master\_ipv4\_cidr\_block) | The master IPV4 CIDR Block like 172.16.0.0/28 | `map(string)` | <pre>{<br>  "devops": "172.16.0.0/28"<br>}</pre> | no |
 | <a name="input_environment_pod_cidr"></a> [environment\_pod\_cidr](#input\_environment\_pod\_cidr) | The Cluster POD Cidr Like 10.48.0.0/14 | `map(string)` | <pre>{<br>  "devops": "10.48.0.0/14"<br>}</pre> | no |

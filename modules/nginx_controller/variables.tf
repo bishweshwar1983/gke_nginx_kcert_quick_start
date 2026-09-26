@@ -44,5 +44,5 @@ variable "nginx_controller_chart" {
 variable "nginx_controller_chart_version" {
   type        = string
   description = "The helm chart version"
-  default     = "4.6.0"
+  default     = "4.11.3"
 }

@@ -11,11 +11,11 @@ terraform {
     }
     helm = {
       source  = "hashicorp/helm"
-      version = ">= 2.11.0"
+      version = "~> 2.11.0"
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = ">= 2.23.0"
+      version = "~> 2.23.0"
     }
   }
 }
@@ -54,11 +54,11 @@ module "devops_nginx_controller" {
   nginx_controller_region              = var.region
 }
 
-module "devops_kcert_controller" {
-  source                               = "../../modules/kcert"
-  nginx_controller_k8s_project         = var.cluster_name
-  nginx_controller_helm_host           = module.devop_k8s.k8s_project_cluster_endpoint
-  nginx_controller_helm_token          = module.devop_k8s.k8s_project_cluster_token
-  nginx_controller_k8s_cluster_ca_cert = module.devop_k8s.k8s_project_cluster_cluster_ca_cert
-  kcert_letsencrypt_email              = var.letsencrypt_email
-}
+# module "devops_kcert_controller" {
+#   source                               = "../../modules/kcert"
+#   nginx_controller_k8s_project         = var.cluster_name
+#   nginx_controller_helm_host           = module.devop_k8s.k8s_project_cluster_endpoint
+#   nginx_controller_helm_token          = module.devop_k8s.k8s_project_cluster_token
+#   nginx_controller_k8s_cluster_ca_cert = module.devop_k8s.k8s_project_cluster_cluster_ca_cert
+#   kcert_letsencrypt_email              = var.letsencrypt_email
+# }

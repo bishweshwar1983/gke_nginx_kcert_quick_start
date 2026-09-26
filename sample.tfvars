@@ -1,9 +1,9 @@
 environment_project = {
-  "devops" = "guru-playground",
-  "dev"    = "guru-playground",
-  "sit"    = "guru-playground",
-  "uat"    = "guru-playground",
-  "prod"   = "guru-playground"
+  "devops" = "bish-playground",
+  "dev"    = "bish-playground",
+  "sit"    = "bish-playground",
+  "uat"    = "bish-playground",
+  "prod"   = "bish-playground"
 }
 
 environment_region = {
@@ -23,11 +23,11 @@ environment_zone = {
 }
 
 environment_k8s_version = {
-  "devops" = "1.27.4-gke.900",
-  "dev"    = "1.27.4-gke.900",
-  "sit"    = "1.27.4-gke.900",
-  "uat"    = "1.27.4-gke.900",
-  "prod"   = "1.27.4-gke.900"
+  "devops" = "1.36.2-gke.2064000",
+  "dev"    = "1.36.2-gke.2064000",
+  "sit"    = "1.36.2-gke.2064000",
+  "uat"    = "1.36.2-gke.2064000",
+  "prod"   = "1.36.2-gke.2064000"
 }
 
 environment_cluster_name = {
@@ -39,11 +39,11 @@ environment_cluster_name = {
 }
 
 environment_letsencrypt_email = {
-  "devops" = "webtechguru@gmail.com",
-  "dev"    = "webtechguru@gmail.com",
-  "sit"    = "webtechguru@gmail.com",
-  "uat"    = "webtechguru@gmail.com",
-  "prod"   = "webtechguru@gmail.com"
+  "devops" = "bishweshwar.pradhan@gmail.com",
+  "dev"    = "bishweshwar.pradhan@gmail.com",
+  "sit"    = "bishweshwar.pradhan@gmail.com",
+  "uat"    = "bishweshwar.pradhan@gmail.com",
+  "prod"   = "bishweshwar.pradhan@gmail.com"
 }
 
 environment_vpc_name = {

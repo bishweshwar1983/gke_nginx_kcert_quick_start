@@ -2,7 +2,7 @@ variable "environment_project" {
   type        = map(string)
   description = "The Association of Projects and Environment names"
   default = {
-    "devops" = "guru-playground",
+    "devops" = "bish-devops",
   }
 }
 
@@ -26,7 +26,7 @@ variable "environment_k8s_version" {
   type        = map(string)
   description = "The Association of k8s version and Environments"
   default = {
-    "devops" = "1.27.4-gke.900"
+    "devops" = "1.36.2-gke.2064000"
   }
 }
 
@@ -34,7 +34,7 @@ variable "environment_letsencrypt_email" {
   type        = map(string)
   description = "The Association of Letsencrypt Email and Environments"
   default = {
-    "devops" = "webtechguru@gmail.com"
+    "devops" = "bishweshwar.pradhan@gmail.com"
   }
 }
 
